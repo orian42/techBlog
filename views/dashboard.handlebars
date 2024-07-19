@@ -2,6 +2,7 @@
 {{#if loggedIn}}
 {{#each blogs as |blog|}}
 <h2>{{blog.title}}</h2>
+<p>Posted by {{user.username}} on {{format_date blog.createdAt}}</p>
 <p>{{blog.description}}</p>
 {{/each}}
 

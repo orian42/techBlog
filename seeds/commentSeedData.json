@@ -1,0 +1,62 @@
+[
+    {
+        "comment": "My wife told me to stop impersonating a flamingo. I had to put my foot down.",
+        "blog_id": 8,
+        "user_id": 1
+    },
+    {
+        "comment": "I went to buy some camo pants but couldn't find any.",
+        "blog_id": 1,
+        "user_id": 2
+    },
+    {
+        "comment": "I failed math so many times at school, I can't even count.",
+        "blog_id": 2,
+        "user_id": 3
+    },
+    {
+        "comment": "I was wondering why the frisbee kept getting bigger and bigger, but then it hit me.",
+        "blog_id": 3,
+        "user_id": 1
+    },
+    {
+        "comment": "I heard there were a bunch of break-ins over at the car park. That is wrong on so many levels.",
+        "blog_id": 4,
+        "user_id": 2
+    },
+    {
+        "comment": "The problem with kleptomaniacs is that they always take things literally.",
+        "blog_id": 3,
+        "user_id": 3
+    },
+    {
+        "comment": "I can't believe I got fired from the calendar factory. All I did was take a day off.",
+        "blog_id": 4,
+        "user_id": 1
+    },
+    {
+        "comment": "Most people are shocked when they find out how bad I am as an electrician.",
+        "blog_id": 5,
+        "user_id": 2
+    },
+    {
+        "comment": "Never trust atoms; they make up everything.",
+        "blog_id": 4,
+        "user_id": 3
+    },
+    {
+        "comment": "I was addicted to the hokey pokey, but then I turned myself around.",
+        "blog_id": 5,
+        "user_id": 1
+    },
+    {
+        "comment": "I used to think I was indecisive. But now I'm not so sure.",
+        "blog_id": 6,
+        "user_id": 2
+    },
+    {
+        "comment": "The easiest time to add insult to injury is when you're signing someone's cast.",
+        "blog_id": 7,
+        "user_id": 3
+    }
+]

@@ -1,6 +1,9 @@
 </div>
 {{#each blogs as |blog|}}
+<a>
 <h2>{{blog.title}}</h2>
+<p>Posted by {{user.username}} on {{format_date blog.createdAt}}</p>
 <p>{{blog.description}}</p>
-</div>
+</a>
 {{/each}}
+</div>
