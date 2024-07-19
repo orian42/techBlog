@@ -1,8 +1,12 @@
 </div>
+{{#if loggedIn}}
 {{#each blogs as |blog|}}
 <h2>{{blog.title}}</h2>
 <p>{{blog.description}}</p>
-</div>
 {{/each}}
 
 <a>ADD A BLOG ENTRY</a>
+{{else}}
+<a href="/login">Log in to view your blog posts...or sign up!</a>
+{{/if}}
+</div>

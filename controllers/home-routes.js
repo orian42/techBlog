@@ -20,11 +20,18 @@ router.get('/dash/:id', async (req, res) => {
     res.json(err);
   });
   const blogs = blogData.map((blog) => blog.get({ plain: true }));
-  res.render('dashboard', { blogs });
+  res.render('dashboard', { 
+    blogs,
+    loggedIn: req.session.loggedIn
+  });
 });
 
 router.get('/login', async (req, res) => {
   res.render('login');
+});
+
+router.get('/signup', async (req, res) => {
+  res.render('signup');
 });
 
 module.exports = router;
