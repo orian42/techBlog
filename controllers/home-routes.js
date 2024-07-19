@@ -3,20 +3,28 @@ const { User, Blog } = require('../models');
 
 // GET all blogs for homepage
 router.get('/', async (req, res) => {
-  try {
-    const dbBlogData = await Blog.findAll({
-          attributes: ['title', 'description'],
-    });
+  const blogData = await Blog.findAll().catch((err) => {
+    res.json(err);
+  });
+  const blogs = blogData.map((blog) => blog.get({ plain: true }));
+  res.render('homepage', { blogs });
+});
 
-    const blogs = dbBlogData.map((blog) =>
-      blog.get({ plain: true })
-    );
+// GET all blogs for current user
+router.get('/dash/:id', async (req, res) => {
+  const blogData = await Blog.findAll({
+    where: {
+      user_id: req.params.id
+    }
+  }).catch((err) => {
+    res.json(err);
+  });
+  const blogs = blogData.map((blog) => blog.get({ plain: true }));
+  res.render('dashboard', { blogs });
+});
 
-    res.render('homepage', blogs);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
+router.get('/login', async (req, res) => {
+  res.render('login');
 });
 
 module.exports = router;

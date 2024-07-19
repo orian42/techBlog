@@ -1,5 +1,6 @@
-{{#each blogs}}
-<div>
-    {{title}}
+</div>
+{{#each blogs as |blog|}}
+<h2>{{blog.title}}</h2>
+<p>{{blog.description}}</p>
 </div>
 {{/each}}
