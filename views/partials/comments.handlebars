@@ -1,0 +1,8 @@
+</div>
+{{#each comments as |comment|}}
+<a>
+<p>Posted by {{user.username}} on {{format_date comment.createdAt}}</p>
+<p>{{comment.description}}</p>
+</a>
+{{/each}}
+</div>

@@ -17,6 +17,22 @@ router.get('/', async (req, res) => {
   res.render('homepage', { blogs });
 });
 
+// Get selected blog
+router.get('/:id', async (req, res) => {
+  const blogData = await Blog.findByPk(req.params.id, {
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      },
+    ]
+  }).catch((err) => {
+    res.json(err);
+  });
+  const singleBlog = blogData.get({ plain: true });
+  res.render('singleblog', { singleBlog });
+});
+
 // GET all blogs for current user
 router.get('/dash/:id', async (req, res) => {
   const blogData = await Blog.findAll({
