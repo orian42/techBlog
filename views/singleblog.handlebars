@@ -4,6 +4,17 @@
 <p>{{singleBlog.description}}</p>
 </div>
 <div>
-{{> comments}}
+    {{> comments}}
 </div>
-<a><button>Add comment</button></a>
+<div>
+    <form class="addCommentForm">
+        <label for="comment-box">Comment</label>
+        <div>
+            <textarea id="comment-box"></textarea>
+        </div>
+        <button type="submit">Add comment</button>
+    </form>
+
+</div>
+
+<script src="./js/addcontent.js"></script>

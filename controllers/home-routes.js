@@ -18,8 +18,8 @@ router.get('/', async (req, res) => {
 });
 
 // Get selected blog
-router.get('/:id', async (req, res) => {
-  const blogData = await Blog.findByPk(req.params.id, {
+router.get('/blog/:id', async (req, res) => {
+  const singleBlogData = await Blog.findByPk(req.params.id, {
     include: [
       {
         model: User,
@@ -39,8 +39,8 @@ router.get('/:id', async (req, res) => {
   }).catch((err) => {
     res.json(err);
   });
-  const singleBlog = blogData.get({ plain: true });
-  console.log(singleBlog);
+  console.log(singleBlogData);
+  const singleBlog = singleBlogData.get({ plain: true });
   res.render('singleblog', { singleBlog });
 });
 

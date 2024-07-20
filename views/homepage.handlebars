@@ -1,6 +1,6 @@
 </div>
 {{#each blogs as |blog|}}
-<a href="/{{blog.id}}">
+<a href="/blog/{{blog.id}}">
 <h2>{{blog.title}}</h2>
 <p>Posted by {{user.username}} on {{format_date blog.createdAt}}</p>
 <p>{{blog.description}}</p>
