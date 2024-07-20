@@ -4,17 +4,17 @@ const commentProcess = async (event) => {
 
     const comment = document.querySelector('#comment-box').value.trim();
     const blog_id = document.querySelector('#blogID').value;
-    const user_id = 1;
+    // const user_id = currentUserId; 
 
     if (comment) {
         const response = await fetch('/api/content/c', {
             method: 'POST',
-            body: JSON.stringify({ comment, blog_id, user_id }),
+            body: JSON.stringify({ comment, blog_id }),
             headers: { 'Content-Type': 'application/json' },
         });
 
         if (response.ok) {
-            document.location.replace('/');
+            document.location.replace(`/blog/${blog_id}`);
         } else {
             alert('Failed to add comment.');
         }

@@ -9,9 +9,12 @@ router.post('/', async (req, res) => {
             password: req.body.password,
         });
 
+
+
         // Session set up
         req.session.save(() => {
             req.session.loggedIn = true;
+            req.session.currentUserId = dbUserData.dataValues.id;
             res.status(200).json(dbUserData);
         });
     } catch (err) {

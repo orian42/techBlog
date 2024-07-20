@@ -40,7 +40,6 @@ router.get('/blog/:id', async (req, res) => {
     res.json(err);
   });
   const singleBlog = singleBlogData.get({ plain: true });
-  console.log(singleBlog);
   res.render('singleblog', { singleBlog });
 });
 
