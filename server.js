@@ -33,6 +33,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.get('/blog/js/addcontent.js', function(req, res) {
+  res.set('Content-Type', 'text/javascript');
+  res.sendFile(__dirname + '/public/js/addcontent.js');
+});
+
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {

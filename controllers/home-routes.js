@@ -39,8 +39,8 @@ router.get('/blog/:id', async (req, res) => {
   }).catch((err) => {
     res.json(err);
   });
-  console.log(singleBlogData);
   const singleBlog = singleBlogData.get({ plain: true });
+  console.log(singleBlog);
   res.render('singleblog', { singleBlog });
 });
 
