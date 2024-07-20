@@ -14,7 +14,10 @@ router.get('/', async (req, res) => {
     res.json(err);
   });
   const blogs = blogData.map((blog) => blog.get({ plain: true }));
-  res.render('homepage', { blogs });
+  res.render('homepage', { 
+    blogs,
+    loggedIn: req.session.loggedIn,
+    currUserId: req.session.currentUserId });
 });
 
 // Get selected blog
@@ -40,7 +43,9 @@ router.get('/blog/:id', async (req, res) => {
     res.json(err);
   });
   const singleBlog = singleBlogData.get({ plain: true });
-  res.render('singleblog', { singleBlog });
+  res.render('singleblog', { 
+    singleBlog,
+    loggedIn: req.session.loggedIn });
 });
 
 // GET all blogs for current user
