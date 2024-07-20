@@ -1,8 +1,9 @@
 </div>
-{{#each comments as |comment|}}
+<h3>COMMENTS</h3>
+{{#each singleBlog.comments as |comment|}}
 <a>
-<p>Posted by {{user.username}} on {{format_date comment.createdAt}}</p>
-<p>{{comment.description}}</p>
+<p>Posted by {{user.username}} on {{format_date comment.created_at}}</p>
+<p>{{comment.comment}}</p>
 </a>
 {{/each}}
 </div>

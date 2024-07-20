@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Blog } = require('../models');
+const { User, Blog, Comment } = require('../models');
 
 // GET all blogs for homepage
 router.get('/', async (req, res) => {
@@ -25,11 +25,22 @@ router.get('/:id', async (req, res) => {
         model: User,
         attributes: ['username']
       },
+      {
+        model: Comment,
+        attributes: ['comment', 'created_at'],
+        include: [
+          {
+            model: User,
+            attributes: ['username']
+          },
+        ]
+      },
     ]
   }).catch((err) => {
     res.json(err);
   });
   const singleBlog = blogData.get({ plain: true });
+  console.log(singleBlog);
   res.render('singleblog', { singleBlog });
 });
 
