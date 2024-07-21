@@ -70,6 +70,10 @@ router.get('/dash/:id', async (req, res) => {
   });
 });
 
+router.get('/newpost', async (req, res) => {
+  res.render('newpost');
+});
+
 router.get('/login', async (req, res) => {
   res.render('login');
 });
