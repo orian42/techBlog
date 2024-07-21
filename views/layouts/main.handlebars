@@ -13,7 +13,7 @@
             <a href="/">Home</a>
             <a href="/dash/{{currUserId}}">Dashboard</a>
             {{#if loggedIn}}
-            <a>Logout</a>
+            <a href="/" id="logout">Logout</a>
             {{else}}
             <a href="../login">Login</a>
             {{/if}}
@@ -23,6 +23,8 @@
     <content>
         {{{body}}}
     </content>
+
+    <script src="./js/logout.js"></script>
 </body>
 
 </html>
