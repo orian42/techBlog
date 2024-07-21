@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
   res.render('homepage', { 
     blogs,
     loggedIn: req.session.loggedIn,
-    currUserId: req.session.currentUserId });
+    currUserId: req.session.loggedIn ? req.session.currentUserId : 0 });
 });
 
 // Get selected blog
