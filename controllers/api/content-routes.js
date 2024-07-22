@@ -42,7 +42,7 @@ router.put('/u', async (req, res) => {
         },
             {
                 where: {
-                    id: req.session.req.body.blog_id
+                    id: req.body.blog_id
                 }
             }
         );
@@ -51,6 +51,28 @@ router.put('/u', async (req, res) => {
             res.status(404).json({ message: 'No blog post found with this user id!' });
         } else {
             res.status(200).json(dbUpdatePostData);
+        }
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
+// Update existing blog post
+router.delete('/d/:id', async (req, res) => {
+    try {
+        const dbDeletePostData = await Blog.destroy({
+                where: {
+                    id: req.params.id
+                }
+            }
+        );
+
+        if (dbDeletePostData[0] === 0) { // Check if any rows were updated
+            res.status(404).json({ message: 'No blog post found with this user id!' });
+        } else {
+            res.status(200).json(dbDeletePostData);
         }
 
     } catch (err) {
