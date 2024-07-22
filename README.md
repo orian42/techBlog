@@ -34,7 +34,7 @@ No installation required.  All that is needed is to navigate to the website.
 ## Usage
   
 
-To utilize this app, navigate to ????????.  The user will be presented with the homepage that contains all of the current blog posts to the app.  The user can view the comments (if any) of any blog entry by clicking on the title of the blog entry.
+To utilize this app, navigate to [https://techblog-s0uy.onrender.com](https://techblog-s0uy.onrender.com).  The user will be presented with the homepage that contains all of the current blog posts to the app.  The user can view the comments (if any) of any blog entry by clicking on the title of the blog entry.
 
 To utilize additional functionality of the app, the user must log in to the app.  If the user does not have a log in, a sign up process is available to allow the user to create an account with a user name and password.  The next time this user visits the site, the user can log in using this information.
 
