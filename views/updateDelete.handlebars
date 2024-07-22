@@ -1,15 +1,15 @@
-<div class="card border border-danger-subtle" style="width: 48rem;">
+<div class="card border border-danger-subtle formwidth">
     <h5 class="card-header bg-danger-subtle">Update or delete your post:</h5>
     <div class="card-body p-2 bg-light">
         <form class="updatePostForm">
             <input type="hidden" id="blog-id" value="{{singleBlog.id}}">
             <label for="title-input" class="form-label">Title</label>
             <div>
-                <input type="text" id="title-input" class="form-control" style="width: 47rem;" value="{{singleBlog.title}}">
+                <input type="text" id="title-input" class="form-control" style="width: 100%" value="{{singleBlog.title}}">
             </div>
             <label for="content-box" class="form-label mt-4">Content</label>
             <div>
-                <textarea id="content-box" class="form-control" style="width: 47rem;">{{singleBlog.description}}</textarea>
+                <textarea id="content-box" class="form-control" style="width: 100%">{{singleBlog.description}}</textarea>
             </div>
             <button type="submit" class="btn btn-secondary mt-4">Update</button>
             <button type="button" class="btn btn-secondary mt-4 delete-blog">Delete</button>

@@ -1,13 +1,23 @@
 let idleTimer;
-const idleTimeoutDuration = 5 * 60 * 1000; // 5 minutes in milliseconds
+const idleTimeoutDuration = 2 * 60 * 1000; // 2 minutes in milliseconds
 
 function resetIdleTimer() {
     clearTimeout(idleTimer);
     idleTimer = setTimeout(logoutUser, idleTimeoutDuration);
 }
 
-function logoutUser() {
-    // Perform logout actions here, such as clearing session data or redirecting to the login page
+async function logoutUser() {
+    try {
+        const response = await fetch('/api/users/logout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        document.location.replace('/');
+    } catch (error) {
+        console.error('Logout error:', error);
+        alert('An error occurred during logout.');
+    }
     console.log("User logged out due to inactivity");
 }
 
@@ -16,4 +26,6 @@ document.addEventListener("mousemove", resetIdleTimer);
 document.addEventListener("keypress", resetIdleTimer);
 
 // Start the initial idle timer
-resetIdleTimer();
+document.addEventListener('DOMContentLoaded', (event) => {
+    resetIdleTimer();
+});

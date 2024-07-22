@@ -1,6 +1,6 @@
 <div>
     {{#each blogs as |blog|}}
-        <div class="card m-4" style="width: 48rem;">
+        <div class="card blogcard m-4">
             <h5 class="card-title card-header bg-primary text-white"><a href="/blog/{{blog.id}}">{{blog.title}}</a></h5>
             <div class="card-body bg-primary-subtle">
                 <h6 class="card-subtitle mb-2 text-body-secondary">Posted by {{user.username}} on {{format_date blog.createdAt}}</h6>
@@ -9,3 +9,5 @@
         </div>
     {{/each}}
 </div>
+
+    <script src="/js/idletimer.js"></script>

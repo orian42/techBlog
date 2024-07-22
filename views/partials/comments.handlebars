@@ -1,7 +1,7 @@
 </div>
 <h5 class="ms-4">Comments</h5>
 {{#each singleBlog.comments as |comment|}}
-<div class="card bg-success-subtle m-2 ms-4" style="width: 48rem;">
+<div class="card commentcard bg-success-subtle m-2 ms-4">
     <div class="card-body">
         <p>{{comment.comment}}</p>
         <p class="fst-italic ms-4">-{{user.username}}, {{format_date comment.created_at}}</p>

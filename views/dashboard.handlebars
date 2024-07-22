@@ -1,7 +1,7 @@
-<div class="m-4">
+<div>
     {{#if loggedIn}}
         {{#each blogs as |blog|}}
-            <div class="card mb-4" style="width: 48rem;">
+            <div class="card m-4 blogcard">
                 <h5 class="card-title card-header bg-primary text-white"><a href="/update/{{blog.id}}">{{blog.title}}</a></h5>
                 <div class="card-body bg-primary-subtle">
                     <h6 class="card-subtitle mb-2 text-body-secondary">Posted by {{user.username}} on {{format_date blog.createdAt}}</h6>
@@ -10,7 +10,7 @@
             </div>
         {{/each}}
 
-        <a href="/newpost"><button type="button" class="btn btn-secondary">+ New Post</button></a>
+        <a href="/newpost"><button type="button" class="btn btn-secondary ms-4">+ New Post</button></a>
 
     {{else}}
         <a href="/login" class="text-primary">Log in to view your posts.  Click here to log in...or sign up!</a>

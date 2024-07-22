@@ -1,5 +1,5 @@
 <div>
-    <div class="card m-4" style="width: 48rem;">
+    <div class="card blogcard m-4">
         <h5 class="card-title card-header bg-primary text-white">{{singleBlog.title}}</h5>
         <div class="card-body bg-primary-subtle">
             <h6 class="card-subtitle mb-2 text-body-secondary">Posted by {{singleBlog.user.username}} on {{format_date singleBlog.createdAt}}</h6>
@@ -14,11 +14,11 @@
 
 {{#if loggedIn}}
 <div class="ms-5">
-    <form class="addCommentForm">
+    <form class="addCommentForm formwidth">
         <input type="hidden" id="blogID" value="{{singleBlog.id}}">
         <label for="comment-box" class="form-label">Comment</label>
         <div>
-            <textarea id="comment-box" class="form-control" style="width: 48rem;"></textarea>
+            <textarea id="comment-box" class="form-control"></textarea>
         </div>
         <button type="submit" class="btn btn-secondary mt-2">Add comment</button>
     </form>
