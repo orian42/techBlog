@@ -14,10 +14,11 @@ router.get('/', async (req, res) => {
     res.json(err);
   });
   const blogs = blogData.map((blog) => blog.get({ plain: true }));
-  res.render('homepage', { 
+  res.render('homepage', {
     blogs,
     loggedIn: req.session.loggedIn,
-    currUserId: req.session.loggedIn ? req.session.currentUserId : 0 });
+    currUserId: req.session.currentUserId
+  });
 });
 
 // Get selected blog
@@ -36,20 +37,25 @@ router.get('/blog/:id', async (req, res) => {
             model: User,
             attributes: ['username']
           },
-        ]
+        ],
       },
+    ],
+    order: [
+      [{ model: Comment }, 'created_at', 'ASC']
     ]
   }).catch((err) => {
     res.json(err);
   });
   const singleBlog = singleBlogData.get({ plain: true });
-  res.render('singleblog', { 
+  res.render('singleblog', {
     singleBlog,
-    loggedIn: req.session.loggedIn });
+    loggedIn: req.session.loggedIn,
+    currUserId: req.session.currentUserId
+  });
 });
 
 // GET all blogs for current user
-router.get('/dash/:id', async (req, res) => {
+router.get('/dash/', async (req, res) => {
   const blogData = await Blog.findAll({
     include: [
       {
@@ -58,7 +64,7 @@ router.get('/dash/:id', async (req, res) => {
       },
     ],
     where: {
-      user_id: req.params.id
+      user_id: req.session.currentUserId ? req.session.currentUserId : 0
     }
   }).catch((err) => {
     res.json(err);
@@ -66,7 +72,8 @@ router.get('/dash/:id', async (req, res) => {
   const blogs = blogData.map((blog) => blog.get({ plain: true }));
   res.render('dashboard', {
     blogs,
-    loggedIn: req.session.loggedIn
+    loggedIn: req.session.loggedIn,
+    currUserId: req.session.currentUserId
   });
 });
 

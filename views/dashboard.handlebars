@@ -1,17 +1,18 @@
 <div class="m-4">
-{{#if loggedIn}}
-    {{#each blogs as |blog|}}
-        <div class="card mb-4" style="width: 48rem;">
-            <h5 class="card-title card-header bg-primary text-white"><a href="/blog/{{blog.id}}">{{blog.title}}</a></h5>
-            <div class="card-body bg-primary-subtle">
-                <h6 class="card-subtitle mb-2 text-body-secondary">Posted by {{user.username}} on {{format_date blog.createdAt}}</h6>
-                <p class="card-text">{{blog.description}}</p>
+    {{#if loggedIn}}
+        {{#each blogs as |blog|}}
+            <div class="card mb-4" style="width: 48rem;">
+                <h5 class="card-title card-header bg-primary text-white"><a href="/blog/{{blog.id}}">{{blog.title}}</a></h5>
+                <div class="card-body bg-primary-subtle">
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Posted by {{user.username}} on {{format_date blog.createdAt}}</h6>
+                    <p class="card-text">{{blog.description}}</p>
+                </div>
             </div>
-        </div>
-    {{/each}}
+        {{/each}}
 
-    <a href="/newpost"><button type="button" class="btn btn-secondary">+ New Post</button></a>
-{{else}}
-<a href="/login">Log in to view your blog posts...or sign up!</a>
-{{/if}}
+        <a href="/newpost"><button type="button" class="btn btn-secondary">+ New Post</button></a>
+
+    {{else}}
+        <a href="/login" class="text-primary">Log in to view your posts.  Click here to log in...or sign up!</a>
+    {{/if}}
 </div>

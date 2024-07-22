@@ -12,7 +12,7 @@
     {{> comments}}
 </div>
 
-
+{{#if loggedIn}}
 <div class="ms-5">
     <form class="addCommentForm">
         <input type="hidden" id="blogID" value="{{singleBlog.id}}">
@@ -23,5 +23,8 @@
         <button type="submit" class="btn btn-secondary mt-2">Add comment</button>
     </form>
 </div>
+{{else}}
+<a href="/login" class="text-primary ms-5">Log in to add comments.  Click here to log in...or sign up!</a>
+{{/if}}
 
-<script src="./js/addcontent.js"></script>
+<script src="/js/addcontent.js"></script>

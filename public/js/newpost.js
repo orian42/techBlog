@@ -13,9 +13,7 @@ const commentProcess = async (event) => {
         });
 
         if (response.ok) {
-            const responseData = await response.json();
-            const dashLoc = responseData.user_id
-            document.location.replace(`/dash/${dashLoc}`);
+            document.location.replace(`/dash`);
         } else {
             alert('Failed to add new post.');
         }
