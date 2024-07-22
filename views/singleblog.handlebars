@@ -1,21 +1,27 @@
+<div>
+    <div class="card m-4" style="width: 48rem;">
+        <h5 class="card-title card-header bg-primary text-white">{{singleBlog.title}}</h5>
+        <div class="card-body bg-primary-subtle">
+            <h6 class="card-subtitle mb-2 text-body-secondary">Posted by {{singleBlog.user.username}} on {{format_date singleBlog.createdAt}}</h6>
+            <p class="card-text">{{singleBlog.description}}</p>
+        </div>
+    </div>
 </div>
-<h2>{{singleBlog.title}}</h2>
-<p>Posted by {{singleBlog.user.username}} on {{format_date singleBlog.createdAt}}</p>
-<p>{{singleBlog.description}}</p>
-</div>
+
 <div>
     {{> comments}}
 </div>
-<div>
+
+
+<div class="ms-5">
     <form class="addCommentForm">
         <input type="hidden" id="blogID" value="{{singleBlog.id}}">
         <label for="comment-box">Comment</label>
         <div>
-            <textarea id="comment-box"></textarea>
+            <textarea id="comment-box" style="width: 48rem;"></textarea>
         </div>
         <button type="submit">Add comment</button>
     </form>
-
 </div>
 
 <script src="./js/addcontent.js"></script>

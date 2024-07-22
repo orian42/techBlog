@@ -1,7 +1,11 @@
 </div>
-<h3>COMMENTS</h3>
+<h3 class="ms-4">COMMENTS</h3>
 {{#each singleBlog.comments as |comment|}}
-<p>{{comment.comment}}</p>
-<p>-{{user.username}}, {{format_date comment.created_at}}</p>
+<div class="card bg-success-subtle m-2 ms-4" style="width: 48rem;">
+    <div class="card-body">
+        <p>{{comment.comment}}</p>
+        <p>-{{user.username}}, {{format_date comment.created_at}}</p>
+    </div>
+</div>
 {{/each}}
 </div>

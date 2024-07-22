@@ -1,9 +1,11 @@
-</div>
-{{#each blogs as |blog|}}
-<a href="/blog/{{blog.id}}">
-<h2>{{blog.title}}</h2>
-<p>Posted by {{user.username}} on {{format_date blog.createdAt}}</p>
-<p>{{blog.description}}</p>
-</a>
-{{/each}}
+<div>
+    {{#each blogs as |blog|}}
+        <div class="card m-4" style="width: 48rem;">
+            <h5 class="card-title card-header bg-primary text-white"><a href="/blog/{{blog.id}}">{{blog.title}}</a></h5>
+            <div class="card-body bg-primary-subtle">
+                <h6 class="card-subtitle mb-2 text-body-secondary">Posted by {{user.username}} on {{format_date blog.createdAt}}</h6>
+                <p class="card-text">{{blog.description}}</p>
+            </div>
+        </div>
+    {{/each}}
 </div>
