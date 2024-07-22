@@ -33,4 +33,30 @@ router.post('/b', async (req, res) => {
     }
 });
 
+// Update existing blog post
+router.put('/u', async (req, res) => {
+    try {
+        const dbUpdatePostData = await Blog.update({
+            title: req.body.title,
+            description: req.body.content
+        },
+            {
+                where: {
+                    id: req.session.req.body.blog_id
+                }
+            }
+        );
+
+        if (dbUpdatePostData[0] === 0) { // Check if any rows were updated
+            res.status(404).json({ message: 'No blog post found with this user id!' });
+        } else {
+            res.status(200).json(dbUpdatePostData);
+        }
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;

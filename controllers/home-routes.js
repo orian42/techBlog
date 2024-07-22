@@ -77,6 +77,39 @@ router.get('/dash/', async (req, res) => {
   });
 });
 
+// Get selected blog for updating
+router.get('/update/:id', async (req, res) => {
+  const singleBlogData = await Blog.findByPk(req.params.id, {
+    include: [
+      {
+        model: User,
+        attributes: ['username']
+      },
+      {
+        model: Comment,
+        attributes: ['comment', 'created_at'],
+        include: [
+          {
+            model: User,
+            attributes: ['username']
+          },
+        ],
+      },
+    ],
+    order: [
+      [{ model: Comment }, 'created_at', 'ASC']
+    ]
+  }).catch((err) => {
+    res.json(err);
+  });
+  const singleBlog = singleBlogData.get({ plain: true });
+  res.render('updateDelete', {
+    singleBlog,
+    loggedIn: req.session.loggedIn,
+    currUserId: req.session.currentUserId
+  });
+});
+
 router.get('/newpost', async (req, res) => {
   res.render('newpost');
 });

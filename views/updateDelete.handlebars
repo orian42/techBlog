@@ -1,0 +1,20 @@
+<div class="card" style="width: 48rem;">
+    <h5 class="card-header bg-warning">Update or delete your post:</h5>
+    <div class="card-body bg-warning-subtle p-2">
+        <form class="updatePostForm">
+            <input type="hidden" id="blog-id" value="{{singleBlog.id}}">
+            <label for="title-input" class="form-label">Title</label>
+            <div>
+                <input type="text" id="title-input" class="form-control" style="width: 47rem;" value="{{singleBlog.title}}">
+            </div>
+            <label for="content-box" class="form-label mt-4">Content</label>
+            <div>
+                <textarea id="content-box" class="form-control" style="width: 47rem;">{{singleBlog.description}}</textarea>
+            </div>
+            <button type="submit" class="btn btn-secondary mt-4">Update</button>
+            <button type="button" class="btn btn-secondary mt-4">Delete</button>
+        </form>
+    </div>
+</div>
+
+<script src="/js/updatepost.js"></script>
