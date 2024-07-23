@@ -1,3 +1,4 @@
+//Inactivity timer that logs user out after being idle for two minutes
 let idleTimer;
 const idleTimeoutDuration = 2 * 60 * 1000; // 2 minutes in milliseconds
 

@@ -1,3 +1,4 @@
+//Front end process for updating a blog post
 const updateProcess = async (event) => {
 
     event.preventDefault();

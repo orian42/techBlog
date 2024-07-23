@@ -1,3 +1,4 @@
+//Process for seeding dummy data for the three models
 const sequelize = require('../config/connection');
 const { User, Blog, Comment } = require('../models');
 
@@ -28,4 +29,5 @@ const seedDatabase = async () => {
     process.exit(0);
 };
 
+//Invokes the seeding process
 seedDatabase();

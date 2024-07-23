@@ -1,3 +1,4 @@
+//Front end process for logging in an existing user
 const loginProcess = async (event) => {
     event.preventDefault();
 

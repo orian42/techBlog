@@ -1,3 +1,4 @@
+//Routes for getting data and navigating pages (view routes)
 const router = require('express').Router();
 const { User, Blog, Comment } = require('../models');
 
@@ -110,6 +111,7 @@ router.get('/update/:id', async (req, res) => {
   });
 });
 
+//Simple navigation routes
 router.get('/newpost', async (req, res) => {
   res.render('newpost');
 });

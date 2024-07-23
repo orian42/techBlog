@@ -1,3 +1,4 @@
+//Front end process for deleting a blog post
 const deleteProcess = async (event) => {
 
     event.preventDefault();

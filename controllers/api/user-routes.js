@@ -1,3 +1,4 @@
+//Routes to process user data
 const router = require('express').Router();
 const { User } = require('../../models');
 
@@ -48,6 +49,7 @@ router.post('/login', async (req, res) => {
             return;
         }
 
+        // Session set up
         req.session.save(() => {
             req.session.loggedIn = true;
             req.session.currentUserId = dbUserData.dataValues.id;

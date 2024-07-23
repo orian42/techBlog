@@ -1,3 +1,4 @@
+//Front end process for adding a comment to a blog post
 const commentProcess = async (event) => {
 
     event.preventDefault();

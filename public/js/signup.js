@@ -1,3 +1,4 @@
+//Front end process for signing up for a new account
 const signUpProcess = async (event) => {
     event.preventDefault();
 

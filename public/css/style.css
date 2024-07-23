@@ -20,6 +20,6 @@ a:link, a:visited {
 
   @media screen and (max-width: 414px) {
     .blogcard, .commentcard, .formwidth  {
-      width: 96%;
+      width: 96%; /* The width is 96%, when the viewport is 414px or smaller */
     }
   }

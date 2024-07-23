@@ -1,3 +1,4 @@
+//Routes for creating, updating and deleting blog and comment data
 const router = require('express').Router();
 const { Comment, Blog } = require('../../models');
 
@@ -59,7 +60,7 @@ router.put('/u', async (req, res) => {
     }
 });
 
-// Update existing blog post
+// Delete existing blog post
 router.delete('/d/:id', async (req, res) => {
     try {
         const dbDeletePostData = await Blog.destroy({
